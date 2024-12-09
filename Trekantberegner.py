@@ -88,23 +88,17 @@ def main():
                variables[index].angle = value_3
                known_angles.append(variables[index])
      
-     class findfunction:
-          sides = len(known_sides)
-          angles = len(known_angles)
-     
      match len(known_sides):
           case 0:
                print("Kan ikke udregne siderne")
-          
           case 1:
                calculate_1_side()
           case 2:
                calculate_2_sides()
           case 3:
-               calculate_3_sides()
+               calculate_3_sides(a.length, b.length, c.length)
           case _:
                print("noget gik galt, prøv igen")
-               main()
 
      if False:
           print(a.length)
@@ -121,9 +115,13 @@ def calculate_1_side():
 def calculate_2_sides():
      print("calculate 2")
 
-def calculate_3_sides():
-     print("calculate 3")
+def calculate_3_sides(a, b, c):
+     A = math.degrees(math.acos((b**2+c**2-a**2)/(2*b*c)))
+     B = math.degrees(math.acos((a**2+c**2-b**2)/(2*a*c)))
+     C = math.degrees(math.acos((a**2+b**2-c**2)/(2*a*b)))
+     print(A, B, C)
 
+     
 
 if __name__ == "__main__":
     main()
