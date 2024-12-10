@@ -4,22 +4,34 @@ def main():
 
      #definerer klasserne sider og vinkler
      class side:
-          def __init__(self, name, length):
+          def __init__(self, name, length, pairing_angle):
                self.name = name
                self.length = length
+               flag = False
+               self.pairing_angle = pairing_angle
      
      class vinkel:
-          def __init__(self, name, angle):
+          def __init__(self, name, angle, pairing_side):
                self.name = name
                self.angle = angle
+               flag = False
+               self.pairing_side = pairing_side
      
-     #alle (relevante) variablerne i en trekant
-     a = side("a", 0.0)
-     b = side("b", 0.0)
-     c = side("c", 0.0)
-     A = vinkel("A", 0.0)
-     B = vinkel("B", 0.0)
-     C = vinkel("C", 0.0)
+     class calculate:
+          def __init__(self, identifier_1, value_1, identifier_2, value_2, identifier_3, value_3):
+               identifier_1 = identifier_1
+               value_1 = value_1
+               identifier_2 = identifier_2
+               value_2 = value_2
+               identifier_3 = value_3
+
+     #alle (relevante) variabler i en trekant
+     a = side("a", 0.0, A)
+     b = side("b", 0.0, B)
+     c = side("c", 0.0, C)
+     A = vinkel("A", 0.0, a)
+     B = vinkel("B", 0.0, b)
+     C = vinkel("C", 0.0, c)
 
      #lister med variablernes navne
      #til sammenligning om de returnerede navne er gyldige
@@ -43,6 +55,7 @@ def main():
      #finder brugerens angivne variabel
      if identifier_1 in variablenames:
           index = variablenames.index(identifier_1)
+          variables[index].flag = True
 
           #checker variablens klasse
           if variables[index].__class__ == side:
@@ -59,6 +72,7 @@ def main():
      #finder brugerens angivne variabel
      if identifier_2 in variablenames:
           index = variablenames.index(identifier_2)
+          variables[index].flag = True
 
           #checker variablens klasse
           if variables[index].__class__ == side:
@@ -75,6 +89,7 @@ def main():
      #finder brugerens angivne variabel
      if identifier_3 in variablenames:
           index = variablenames.index(identifier_3)
+          variables[index].flag = True
 
           #checker variablens klasse
           if variables[index].__class__ == side:
@@ -88,38 +103,19 @@ def main():
                variables[index].angle = value_3
                known_angles.append(variables[index])
      
-     match len(known_sides):
-          case 0:
-               print("Kan ikke udregne siderne")
-          case 1:
-               calculate_1_side()
-          case 2:
-               calculate_2_sides()
-          case 3:
-               calculate_3_sides(a.length, b.length, c.length)
-          case _:
-               print("noget gik galt, prøv igen")
-
-     if False:
-          print(a.length)
-          print(b.length)
-          print(c.length)
-          print(A.angle)
-          print(B.angle)
-          print(C.angle)
+     calculate_triangle(a, b, c, A, B, C)
 
 
-def calculate_1_side():
-     print("calculating 1")
-
-def calculate_2_sides():
-     print("calculate 2")
+def calculate_triangle(a, b, c, A, B, C):
+     pass
 
 def calculate_3_sides(a, b, c):
      A = math.degrees(math.acos((b**2+c**2-a**2)/(2*b*c)))
      B = math.degrees(math.acos((a**2+c**2-b**2)/(2*a*c)))
      C = math.degrees(math.acos((a**2+b**2-c**2)/(2*a*b)))
-     print(A, B, C)
+     print("A: " , A)
+     print("B: " , B)
+     print("C: " , C)
 
      
 
