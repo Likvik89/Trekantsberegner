@@ -16,11 +16,13 @@ def main():
                flag = False
      
      class calculate:
-          def __init__(self, identifier_1, identifier_2, identifier_3):
+          def __init__(self, identifier_1, identifier_2, identifier_3): #funktion):
                self.identifier_1 = identifier_1
                self.identifier_2 = identifier_2
                self.identifier_3 = identifier_3
-               
+
+               #self.funktion = funktion
+
 
      #alle (relevante) variabler i en trekant
      a = side("a", 0.0)
@@ -148,10 +150,19 @@ def main():
                variables[index].angle = value_3
                known_angles.append(variables[index])
      
+     possible_functions = []
+
      for f in funktioner:
-          match identifier_1:
-               case f.identifier_1:
-                    pass
+
+          v1 = variables[variablenames.index(identifier_1)]
+          v2 = variables[variablenames.index(identifier_2)]
+          v3 = variables[variablenames.index(identifier_3)]
+
+          if v1 == f.identifier_1 and v2 == f.identifier_2 and v3 == identifier_3:
+               f.function()
+
+
+          
 
 
 
