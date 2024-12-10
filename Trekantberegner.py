@@ -20,6 +20,7 @@ def main():
                self.identifier_1 = identifier_1
                self.identifier_2 = identifier_2
                self.identifier_3 = identifier_3
+               
 
      #alle (relevante) variabler i en trekant
      a = side("a", 0.0)
@@ -31,13 +32,57 @@ def main():
 
      abc = calculate(a, b, c)
      abA = calculate(a, b, A)
-
+     abB = calculate(a, b, B)
+     abC = calculate(a, b, C)
+     acA = calculate(a, c, A)
+     acB = calculate(a, c, B)
+     acC = calculate(a, c, C)
+     bcA = calculate(b, c, A)
+     bcB = calculate(b, c, B)
+     bcC = calculate(b, c, C)
+     aAB = calculate(a, A, B)
+     aAC = calculate(a, A, C)
+     aBC = calculate(a, B, C)
+     aAB = calculate(a, A, B)
+     aAC = calculate(a, A, C)
+     aBC = calculate(a, B, C)
+     bAB = calculate(b, A, B)
+     bAC = calculate(b, A, C)
+     bBC = calculate(b, B, C)
+     cAB = calculate(c, A, B)
+     cAC = calculate(c, A, C)
+     cBC = calculate(c, B, C)
 
      #lister med variablernes navne
      #til sammenligning om de returnerede navne er gyldige
      variablenames = ["a", "b", "c", "A", "B", "C"]
      variables = [a, b, c, A, B, C] 
      
+     funktioner = [
+     abc,
+     abA,
+     abB,
+     abC,
+     acA,
+     acB,
+     acC,
+     bcA,
+     bcB,
+     bcC,
+     aAB,
+     aAC,
+     aBC,
+     aAB,
+     aAC,
+     aBC,
+     bAB,
+     bAC,
+     bBC,
+     cAB,
+     cAC,
+     cBC
+     ]
+
      #liste over de kendte sider
      known_sides = []
      #liste over de kendte vinkler
@@ -102,6 +147,14 @@ def main():
           elif variables[index].__class__ == vinkel:
                variables[index].angle = value_3
                known_angles.append(variables[index])
+     
+     for f in funktioner:
+          match identifier_1:
+               case f.identifier_1:
+                    pass
+
+
+
 
 def calculate_a_b_c(a, b, c):
      A = math.degrees(math.acos((b**2+c**2-a**2)/(2*b*c)))
