@@ -157,14 +157,22 @@ def main():
           v1 = variables[variablenames.index(identifier_1)]
           v2 = variables[variablenames.index(identifier_2)]
           v3 = variables[variablenames.index(identifier_3)]
+          print("v1: ", v1)
+          print("v2: ", v2)
+          print("v3: ", v3)
+          print(f.identifier_1)
+          print(f.identifier_2)
+          print(f.identifier_3)
 
-          if v1 == (f.identifier_1 or f.identifier_2 or f.identifier_3):
+          if v1 == f.identifier_1 or v1 == f.identifier_2 or v1 == f.identifier_3:
                print("Fandt første variabel")
-               if v2 == (f.identifier_1 or f.identifier_2 and f.identifier_3):
+               if v2 == f.identifier_1 or v2 == f.identifier_2 or v2 == f.identifier_3:
                     print("fandt anden variabel")
-                    if v3 == (f.identifier_1 or f.identifier_2 or f.identifier_3):
+                    if v3 == f.identifier_1 or v3 == f.identifier_2 or v3 == f.identifier_3:
                          print("fandt funktionen")
                          f.function(f.identifier_1.value, f.identifier_2.value, f.identifier_3.value)
+
+                         
 
 
           
