@@ -18,12 +18,10 @@ def main():
                self.pairing_side = pairing_side
      
      class calculate:
-          def __init__(self, identifier_1, value_1, identifier_2, value_2, identifier_3, value_3):
+          def __init__(self, identifier_1, identifier_2, identifier_3):
                identifier_1 = identifier_1
-               value_1 = value_1
                identifier_2 = identifier_2
-               value_2 = value_2
-               identifier_3 = value_3
+               identifier_3 = identifier_3
 
      #alle (relevante) variabler i en trekant
      a = side("a", 0.0, A)
@@ -32,6 +30,9 @@ def main():
      A = vinkel("A", 0.0, a)
      B = vinkel("B", 0.0, b)
      C = vinkel("C", 0.0, c)
+
+     abc = calculate(a, b, c)
+     
 
      #lister med variablernes navne
      #til sammenligning om de returnerede navne er gyldige
@@ -102,20 +103,68 @@ def main():
           elif variables[index].__class__ == vinkel:
                variables[index].angle = value_3
                known_angles.append(variables[index])
-     
-     calculate_triangle(a, b, c, A, B, C)
 
-
-def calculate_triangle(a, b, c, A, B, C):
-     pass
-
-def calculate_3_sides(a, b, c):
+def calculate_a_b_c(a, b, c):
      A = math.degrees(math.acos((b**2+c**2-a**2)/(2*b*c)))
      B = math.degrees(math.acos((a**2+c**2-b**2)/(2*a*c)))
      C = math.degrees(math.acos((a**2+b**2-c**2)/(2*a*b)))
      print("A: " , A)
      print("B: " , B)
      print("C: " , C)
+
+def calculate_a_b_A(a, b, A):
+     pass
+
+def calculate_a_b_B(a, b, B):
+     pass
+
+def calculate_a_b_C(a, b, C):
+     pass
+
+def calculate_a_c_A(a, c, A):
+     pass
+
+def calculate_a_c_B(a, c, B):
+     pass
+
+def calculate_a_c_C(a, c, C):
+     pass
+
+def calculate_b_c_A(b, c, A):
+     pass
+
+def calculate_b_c_B(b, c, B):
+     pass
+
+def calculate_b_c_C(b, c, C):
+     pass
+
+def calculate_a_A_B(a, A, B):
+     pass
+
+def calculate_a_A_C(a, A, C):
+     pass
+
+def calculate_a_B_C(a, B, C):
+     pass
+
+def calculate_b_A_B(b, A, B):
+     pass
+
+def calculate_b_A_C(b, A, C):
+     pass
+
+def calculate_b_B_C(b, B, C):
+     pass
+
+def calculate_c_A_B(c, A, B):
+     pass
+
+def calculate_c_A_C(c, A, C):
+     pass
+
+def calculate_c_B_C(c, B, C):
+     pass
 
      
 
