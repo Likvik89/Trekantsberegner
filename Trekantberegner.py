@@ -4,35 +4,34 @@ def main():
 
      #definerer klasserne sider og vinkler
      class side:
-          def __init__(self, name, length, pairing_angle):
+          def __init__(self, name, length):
                self.name = name
                self.length = length
                flag = False
-               self.pairing_angle = pairing_angle
      
      class vinkel:
-          def __init__(self, name, angle, pairing_side):
+          def __init__(self, name, angle):
                self.name = name
                self.angle = angle
                flag = False
-               self.pairing_side = pairing_side
      
      class calculate:
           def __init__(self, identifier_1, identifier_2, identifier_3):
-               identifier_1 = identifier_1
-               identifier_2 = identifier_2
-               identifier_3 = identifier_3
+               self.identifier_1 = identifier_1
+               self.identifier_2 = identifier_2
+               self.identifier_3 = identifier_3
 
      #alle (relevante) variabler i en trekant
-     a = side("a", 0.0, A)
-     b = side("b", 0.0, B)
-     c = side("c", 0.0, C)
-     A = vinkel("A", 0.0, a)
-     B = vinkel("B", 0.0, b)
-     C = vinkel("C", 0.0, c)
+     a = side("a", 0.0)
+     b = side("b", 0.0)
+     c = side("c", 0.0)
+     A = vinkel("A", 0.0)
+     B = vinkel("B", 0.0)
+     C = vinkel("C", 0.0)
 
      abc = calculate(a, b, c)
-     
+     abA = calculate(a, b, A)
+
 
      #lister med variablernes navne
      #til sammenligning om de returnerede navne er gyldige
