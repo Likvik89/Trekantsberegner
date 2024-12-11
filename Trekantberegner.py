@@ -32,7 +32,7 @@ def main():
      B = vinkel("B", 0.0)
      C = vinkel("C", 0.0)
 
-     abc = calculate(a, b, c, calculate_a_b_C)
+     abc = calculate(a, b, c, calculate_a_b_c)
      abA = calculate(a, b, A, calculate_a_b_A)
      abB = calculate(a, b, B, calculate_a_b_B)
      abC = calculate(a, b, C, calculate_a_b_C)
@@ -109,12 +109,12 @@ def main():
           if variables[index].__class__ == side:
 
                #ændrer variablens længde og tilføjer den til listen over kendte sider
-               variables[index].length = value_1
+               variables[index].value = value_1
                known_sides.append(variables[index])
 
                #ændrer variablens vinkel og tilføjer den til listen over kendte vinkler
           elif variables[index].__class__ == vinkel:
-               variables[index].angle = value_1
+               variables[index].value = value_1
                known_angles.append(variables[index])
 
      #finder brugerens angivne variabel
@@ -157,12 +157,15 @@ def main():
           v1 = variables[variablenames.index(identifier_1)]
           v2 = variables[variablenames.index(identifier_2)]
           v3 = variables[variablenames.index(identifier_3)]
-          print("v1: ", v1)
-          print("v2: ", v2)
-          print("v3: ", v3)
-          print(f.identifier_1)
-          print(f.identifier_2)
-          print(f.identifier_3)
+
+          if True:
+               print(a.value)
+               print(b.value)
+               print(c.value)
+               print(A.value)
+               print(B.value)
+               print(C.value)
+
 
           if v1 == f.identifier_1 or v1 == f.identifier_2 or v1 == f.identifier_3:
                print("Fandt første variabel")
@@ -170,20 +173,18 @@ def main():
                     print("fandt anden variabel")
                     if v3 == f.identifier_1 or v3 == f.identifier_2 or v3 == f.identifier_3:
                          print("fandt funktionen")
+                         print(f.identifier_1)
                          f.function(f.identifier_1.value, f.identifier_2.value, f.identifier_3.value)
 
                          
 
-
-          
-
-
-
-
 def calculate_a_b_c(a, b, c):
-     A = math.degrees(math.acos((b**2+c**2-a**2)/(2*b*c)))
-     B = math.degrees(math.acos((a**2+c**2-b**2)/(2*a*c)))
-     C = math.degrees(math.acos((a**2+b**2-c**2)/(2*a*b)))
+     print(a)
+     print(b)
+     print(c)
+     A = math.degrees(math.acos(max(-1, min(1, (b**2 + c**2 - a**2) / (2 * b * c)))))
+     B = math.degrees(math.acos(max(-1, min(1, (a**2 + c**2 - b**2) / (2 * a * c)))))
+     C = math.degrees(math.acos(max(-1, min(1, (a**2 + b**2 - c**2) / (2 * a * b)))))
      print("A: " , A)
      print("B: " , B)
      print("C: " , C)
