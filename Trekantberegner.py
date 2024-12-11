@@ -2,18 +2,10 @@ import math
 
 def main():
 
-     #definerer klasserne sider og vinkler
-     class side:
+     class variable:
           def __init__(self, name, length):
                self.name = name
                self.value = length
-               flag = False
-     
-     class vinkel:
-          def __init__(self, name, angle):
-               self.name = name
-               self.value = angle
-               flag = False
      
      class calculate:
           def __init__(self, identifier_1, identifier_2, identifier_3, function):
@@ -25,13 +17,14 @@ def main():
 
 
      #alle (relevante) variabler i en trekant
-     a = side("a", 0.0)
-     b = side("b", 0.0)
-     c = side("c", 0.0)
-     A = vinkel("A", 0.0)
-     B = vinkel("B", 0.0)
-     C = vinkel("C", 0.0)
+     a = variable("a", 0.0)
+     b = variable("b", 0.0)
+     c = variable("c", 0.0)
+     A = variable("A", 0.0)
+     B = variable("B", 0.0)
+     C = variable("C", 0.0)
 
+     #alle 
      abc = calculate(a, b, c, calculate_a_b_c)
      abA = calculate(a, b, A, calculate_a_b_A)
      abB = calculate(a, b, B, calculate_a_b_B)
@@ -86,11 +79,6 @@ def main():
      cBC
      ]
 
-     #liste over de kendte sider
-     known_sides = []
-     #liste over de kendte vinkler
-     known_angles = []
-
      #tager input fra brugeren
      #identifier er variablens navn, og value er dens værdi
      identifier_1 = input("indtast navnet på den første kendte variabel:")
@@ -103,85 +91,39 @@ def main():
      #finder brugerens angivne variabel
      if identifier_1 in variablenames:
           index = variablenames.index(identifier_1)
-          variables[index].flag = True
+          variables[index].value = value_1
 
-          #checker variablens klasse
-          if variables[index].__class__ == side:
-
-               #ændrer variablens længde og tilføjer den til listen over kendte sider
-               variables[index].value = value_1
-               known_sides.append(variables[index])
-
-               #ændrer variablens vinkel og tilføjer den til listen over kendte vinkler
-          elif variables[index].__class__ == vinkel:
-               variables[index].value = value_1
-               known_angles.append(variables[index])
 
      #finder brugerens angivne variabel
      if identifier_2 in variablenames:
           index = variablenames.index(identifier_2)
-          variables[index].flag = True
+          variables[index].value = value_2
 
-          #checker variablens klasse
-          if variables[index].__class__ == side:
-
-               #ændrer variablens længde og tilføjer den til listen over kendte sider
-               variables[index].value = value_2
-               known_sides.append(variables[index])
-
-               #ændrer variablens vinkel og tilføjer den til listen over kendte vinkler
-          elif variables[index].__class__ == vinkel:
-               variables[index].value = value_2
-               known_angles.append(variables[index])
  
      #finder brugerens angivne variabel
      if identifier_3 in variablenames:
           index = variablenames.index(identifier_3)
-          variables[index].flag = True
+          variables[index].value = value_3
 
-          #checker variablens klasse
-          if variables[index].__class__ == side:
-
-               #ændrer variablens længde og tilføjer den til listen over kendte sider
-               variables[index].value = value_3
-               known_sides.append(variables[index])
-
-               #ændrer variablens vinkel og tilføjer den til listen over kendte vinkler
-          elif variables[index].__class__ == vinkel:
-               variables[index].value = value_3
-               known_angles.append(variables[index])
      
      #matcher de angivne variabler med 
      for f in funktioner:
-          print("søger")
           v1 = variables[variablenames.index(identifier_1)]
           v2 = variables[variablenames.index(identifier_2)]
           v3 = variables[variablenames.index(identifier_3)]
-
-          if True:
-               print(a.value)
-               print(b.value)
-               print(c.value)
-               print(A.value)
-               print(B.value)
-               print(C.value)
-
-
           if v1 == f.identifier_1 or v1 == f.identifier_2 or v1 == f.identifier_3:
-               print("Fandt første variabel")
                if v2 == f.identifier_1 or v2 == f.identifier_2 or v2 == f.identifier_3:
-                    print("fandt anden variabel")
                     if v3 == f.identifier_1 or v3 == f.identifier_2 or v3 == f.identifier_3:
-                         print("fandt funktionen")
                          print(f.identifier_1)
                          f.function(f.identifier_1.value, f.identifier_2.value, f.identifier_3.value)
+                         break
 
                          
 
 def calculate_a_b_c(a, b, c):
-     print(a)
-     print(b)
-     print(c)
+     print("a: ", a)
+     print("b: ", b)
+     print("c: ", c)
      A = math.degrees(math.acos(max(-1, min(1, (b**2 + c**2 - a**2) / (2 * b * c)))))
      B = math.degrees(math.acos(max(-1, min(1, (a**2 + c**2 - b**2) / (2 * a * c)))))
      C = math.degrees(math.acos(max(-1, min(1, (a**2 + b**2 - c**2) / (2 * a * b)))))
