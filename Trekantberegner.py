@@ -15,8 +15,6 @@ def main():
 
                self.function = function
 
-
-     #alle (relevante) variabler i en trekant
      a = variable("a", 0.0)
      b = variable("b", 0.0)
      c = variable("c", 0.0)
@@ -24,7 +22,6 @@ def main():
      B = variable("B", 0.0)
      C = variable("C", 0.0)
 
-     #alle 
      abc = calculate(a, b, c, calculate_a_b_c)
      abA = calculate(a, b, A, calculate_a_b_A)
      abB = calculate(a, b, B, calculate_a_b_B)
@@ -49,8 +46,6 @@ def main():
      cBC = calculate(c, B, C, calculate_c_B_C)
      ABC = calculate(A, B, C, calculate_A_B_C)
 
-     #lister med variablernes navne
-     #til sammenligning om de returnerede navne er gyldige
      variablenames = ["a", "b", "c", "A", "B", "C"]
      variables = [a, b, c, A, B, C] 
      
@@ -79,8 +74,6 @@ def main():
      cBC
      ]
 
-     #tager input fra brugeren
-     #identifier er variablens navn, og value er dens værdi
      identifier_1 = input("indtast navnet på den første kendte variabel:")
      value_1 = float(input("indtast værdien på variablen:"))
      identifier_2 = input("indtast navnet på den anden kendte variabel:")
@@ -88,25 +81,21 @@ def main():
      identifier_3 = input("indtast navnet på den tredje kendte variabel:")
      value_3 = float(input("indtast værdien på variablen:"))
 
-     #finder brugerens angivne variabel
      if identifier_1 in variablenames:
           index = variablenames.index(identifier_1)
           variables[index].value = value_1
 
 
-     #finder brugerens angivne variabel
      if identifier_2 in variablenames:
           index = variablenames.index(identifier_2)
           variables[index].value = value_2
 
  
-     #finder brugerens angivne variabel
      if identifier_3 in variablenames:
           index = variablenames.index(identifier_3)
           variables[index].value = value_3
 
      
-     #matcher de angivne variabler med 
      for f in funktioner:
           v1 = variables[variablenames.index(identifier_1)]
           v2 = variables[variablenames.index(identifier_2)]
@@ -114,19 +103,18 @@ def main():
           if v1 == f.identifier_1 or v1 == f.identifier_2 or v1 == f.identifier_3:
                if v2 == f.identifier_1 or v2 == f.identifier_2 or v2 == f.identifier_3:
                     if v3 == f.identifier_1 or v3 == f.identifier_2 or v3 == f.identifier_3:
-                         print(f.identifier_1)
                          f.function(f.identifier_1.value, f.identifier_2.value, f.identifier_3.value)
                          break
 
                          
 
 def calculate_a_b_c(a, b, c):
-     print("a: ", a)
-     print("b: ", b)
-     print("c: ", c)
      A = math.degrees(math.acos(max(-1, min(1, (b**2 + c**2 - a**2) / (2 * b * c)))))
      B = math.degrees(math.acos(max(-1, min(1, (a**2 + c**2 - b**2) / (2 * a * c)))))
      C = math.degrees(math.acos(max(-1, min(1, (a**2 + b**2 - c**2) / (2 * a * b)))))
+     print("a: ", a)
+     print("b: ", b)
+     print("c: ", c)
      print("A: " , A)
      print("B: " , B)
      print("C: " , C)
