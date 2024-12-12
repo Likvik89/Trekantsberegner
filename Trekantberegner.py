@@ -120,7 +120,15 @@ def calculate_a_b_c(a, b, c):
      print("C: " , C)
 
 def calculate_a_b_A(a, b, A):
-     pass
+     B = math.degrees(math.asin((math.sin(math.radians(A)) * b)/a))
+     C = 180 - A - B
+     c = math.sqrt(a**2 + b**2 - 2*a*b*math.degrees(math.cos(math.radians(C))))
+     print("a: ", A)
+     print("b: ", b)
+     print("c: ", c)
+     print("A: ", A)
+     print("B: ", B)
+     print("C: ", C)
 
 def calculate_a_b_B(a, b, B):
      pass
