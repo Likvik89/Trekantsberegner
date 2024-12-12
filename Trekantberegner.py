@@ -142,9 +142,9 @@ def calculate_a_b_B(a, b, B):
      print("C: ", C)
 
 def calculate_a_b_C(a, b, C):
-
-
-     
+     A = math.degrees(math.asin((math.sin(math.radians(B)) * a)/b))
+     B = 180 - A - C
+     c = math.sqrt(a**2 + b**2 - 2*a*b*math.degrees(math.cos(math.radians(C))))
      print("a: ", a)
      print("b: ", b)
      print("c: ", c)
