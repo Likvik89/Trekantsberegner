@@ -142,55 +142,143 @@ def calculate_a_b_B(a, b, B):
      print("C: ", C)
 
 def calculate_a_b_C(a, b, C):
-     pass
+
+
+     
+     print("a: ", a)
+     print("b: ", b)
+     print("c: ", c)
+     print("A: ", A)
+     print("B: ", B)
+     print("C: ", C)
 
 def calculate_a_c_A(a, c, A):
-     pass
+     print("a: ", a)
+     print("b: ", b)
+     print("c: ", c)
+     print("A: ", A)
+     print("B: ", B)
+     print("C: ", C)
 
 def calculate_a_c_B(a, c, B):
-     pass
+     print("a: ", a)
+     print("b: ", b)
+     print("c: ", c)
+     print("A: ", A)
+     print("B: ", B)
+     print("C: ", C)
 
 def calculate_a_c_C(a, c, C):
-     pass
+     print("a: ", a)
+     print("b: ", b)
+     print("c: ", c)
+     print("A: ", A)
+     print("B: ", B)
+     print("C: ", C)
 
 def calculate_b_c_A(b, c, A):
-     pass
+     print("a: ", a)
+     print("b: ", b)
+     print("c: ", c)
+     print("A: ", A)
+     print("B: ", B)
+     print("C: ", C)
 
 def calculate_b_c_B(b, c, B):
-     pass
+     print("a: ", a)
+     print("b: ", b)
+     print("c: ", c)
+     print("A: ", A)
+     print("B: ", B)
+     print("C: ", C)
 
 def calculate_b_c_C(b, c, C):
-     pass
+     print("a: ", a)
+     print("b: ", b)
+     print("c: ", c)
+     print("A: ", A)
+     print("B: ", B)
+     print("C: ", C)
 
 def calculate_a_A_B(a, A, B):
-     pass
+     print("a: ", a)
+     print("b: ", b)
+     print("c: ", c)
+     print("A: ", A)
+     print("B: ", B)
+     print("C: ", C)
 
 def calculate_a_A_C(a, A, C):
-     pass
+     print("a: ", a)
+     print("b: ", b)
+     print("c: ", c)
+     print("A: ", A)
+     print("B: ", B)
+     print("C: ", C)
 
 def calculate_a_B_C(a, B, C):
-     pass
+     print("a: ", a)
+     print("b: ", b)
+     print("c: ", c)
+     print("A: ", A)
+     print("B: ", B)
+     print("C: ", C)
 
 def calculate_b_A_B(b, A, B):
-     pass
+     print("a: ", a)
+     print("b: ", b)
+     print("c: ", c)
+     print("A: ", A)
+     print("B: ", B)
+     print("C: ", C)
 
 def calculate_b_A_C(b, A, C):
-     pass
+     print("a: ", a)
+     print("b: ", b)
+     print("c: ", c)
+     print("A: ", A)
+     print("B: ", B)
+     print("C: ", C)
 
 def calculate_b_B_C(b, B, C):
-     pass
+     print("a: ", a)
+     print("b: ", b)
+     print("c: ", c)
+     print("A: ", A)
+     print("B: ", B)
+     print("C: ", C)
 
 def calculate_c_A_B(c, A, B):
-     pass
+     print("a: ", a)
+     print("b: ", b)
+     print("c: ", c)
+     print("A: ", A)
+     print("B: ", B)
+     print("C: ", C)
 
 def calculate_c_A_C(c, A, C):
-     pass
+     print("a: ", a)
+     print("b: ", b)
+     print("c: ", c)
+     print("A: ", A)
+     print("B: ", B)
+     print("C: ", C)
 
 def calculate_c_B_C(c, B, C):
-     pass
+     print("a: ", a)
+     print("b: ", b)
+     print("c: ", c)
+     print("A: ", A)
+     print("B: ", B)
+     print("C: ", C)
 
 def calculate_A_B_C(A, B, C):
-     pass
+     print("a: ", a)
+     print("b: ", b)
+     print("c: ", c)
+     print("A: ", A)
+     print("B: ", B)
+     print("C: ", C)
 
 if __name__ == "__main__":
     main()
