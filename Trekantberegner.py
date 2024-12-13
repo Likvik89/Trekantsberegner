@@ -181,6 +181,9 @@ def calculate_a_c_B(a, c, B):
      main()
 
 def calculate_a_c_C(a, c, C):
+     A = math.degrees(math.asin(max (-1, min(1, (math.sin(math.radians(C)) * a)/c))))
+     B = 180 - A - C
+     b = math.sqrt(a**2 + c**2 - 2*a*c*math.cos(math.radians(B)))
      print("a: ", a)
      print("b: ", b)
      print("c: ", c)
