@@ -120,10 +120,10 @@ def calculate_a_b_c(a, b, c):
      print("C: " , C)
 
 def calculate_a_b_A(a, b, A):
-     B = math.degrees(math.asin((math.sin(math.radians(A)) * b)/a))
+     B = math.degrees(math.asin(max(-1, min(1, (math.sin(math.radians(A)) * b)/a))))
      C = 180 - A - B
-     c = math.sqrt(a**2 + b**2 - 2*a*b*math.degrees(math.cos(math.radians(C))))
-     print("a: ", A)
+     c = math.sqrt(a**2 + b**2 - (2*a*b*(math.cos(math.radians(C)))))
+     print("a: ", a)
      print("b: ", b)
      print("c: ", c)
      print("A: ", A)
@@ -133,7 +133,7 @@ def calculate_a_b_A(a, b, A):
 def calculate_a_b_B(a, b, B):
      A = math.degrees(math.asin((math.sin(math.radians(B)) * a)/b))
      C = 180 - A - B
-     c = math.sqrt(a**2 + b**2 - 2*a*b*math.degrees(math.cos(math.radians(C))))
+     c = math.sqrt(a**2 + b**2 - (2*a*b*math.degrees(math.cos(math.radians(C)))))
      print("a: ", a)
      print("b: ", b)
      print("c: ", c)
@@ -153,6 +153,9 @@ def calculate_a_b_C(a, b, C):
      print("C: ", C)
 
 def calculate_a_c_A(a, c, A):
+     C = math.degrees(math.asin((math.sin(math.radians(A)) * c)/a))
+     B = 180 - C - A
+     b = math.sqrt(a**2 + c**2 - 2*a*c*math.degrees(math.cos(math.radians(A))))
      print("a: ", a)
      print("b: ", b)
      print("c: ", c)
