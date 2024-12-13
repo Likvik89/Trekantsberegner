@@ -159,7 +159,7 @@ def calculate_a_b_C(a, b, C):
 def calculate_a_c_A(a, c, A):
      C = math.degrees(math.asin(max (-1, min(1, (math.sin(math.radians(A)) * c)/a))))
      B = 180 - C - A
-     b = math.sqrt(a**2 + c**2 - 2*a*c*math.cos(math.radians(A)))
+     b = math.sqrt(a**2 + c**2 - 2*a*c*math.cos(math.radians(B)))
      print("a: ", a)
      print("b: ", b)
      print("c: ", c)
@@ -229,12 +229,16 @@ def calculate_b_c_C(b, c, C):
      main()
 
 def calculate_a_A_B(a, A, B):
+     C = 180 - A - B
+     c = (math.sin(math.radians(C)) * a)/math.sin(math.radians(A))
+     b = math.sqrt(a**2 + c**2 - 2*a*c*math.cos(math.radians(B)))
      print("a: ", a)
      print("b: ", b)
      print("c: ", c)
      print("A: ", A)
      print("B: ", B)
      print("C: ", C)
+     main()
 
 def calculate_a_A_C(a, A, C):
      print("a: ", a)
