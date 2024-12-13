@@ -241,12 +241,16 @@ def calculate_a_A_B(a, A, B):
      main()
 
 def calculate_a_A_C(a, A, C):
+     B = 180 - A - C
+     b = (math.sin(math.radians(B)) * a)/math.sin(math.radians(A))
+     c = (math.sin(math.radians(C)) * a)/math.sin(math.radians(A))
      print("a: ", a)
      print("b: ", b)
      print("c: ", c)
      print("A: ", A)
      print("B: ", B)
      print("C: ", C)
+     main()
 
 def calculate_a_B_C(a, B, C):
      print("a: ", a)
