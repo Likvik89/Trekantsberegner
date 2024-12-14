@@ -253,68 +253,91 @@ def calculate_a_A_C(a, A, C):
      main()
 
 def calculate_a_B_C(a, B, C):
+     A = 180 - B - C
+     b = (math.sin(math.radians(B)) * a)/math.sin(math.radians(A))
+     c = (math.sin(math.radians(C)) * a)/math.sin(math.radians(A)) 
      print("a: ", a)
      print("b: ", b)
      print("c: ", c)
      print("A: ", A)
      print("B: ", B)
      print("C: ", C)
+     main()
 
 def calculate_b_A_B(b, A, B):
+     C = 180 - A - B 
+     a = (math.sin(math.radians(A)) * b)/math.sin(math.radians(B))
+     c = (math.sin(math.radians(C)) * a)/math.sin(math.radians(A)) 
      print("a: ", a)
      print("b: ", b)
      print("c: ", c)
      print("A: ", A)
      print("B: ", B)
      print("C: ", C)
+     main()
 
 def calculate_b_A_C(b, A, C):
+     B = 180 - A - C
+     a = (math.sin(math.radians(A)) * b)/math.sin(math.radians(B))
+     c = (math.sin(math.radians(C)) * a)/math.sin(math.radians(A)) 
      print("a: ", a)
      print("b: ", b)
      print("c: ", c)
      print("A: ", A)
      print("B: ", B)
      print("C: ", C)
+     main()
 
 def calculate_b_B_C(b, B, C):
+     A = 180 - B - C
+     a = (math.sin(math.radians(A)) * b)/math.sin(math.radians(B))
+     c = (math.sin(math.radians(C)) * a)/math.sin(math.radians(A)) 
      print("a: ", a)
      print("b: ", b)
      print("c: ", c)
      print("A: ", A)
      print("B: ", B)
      print("C: ", C)
+     main()
 
 def calculate_c_A_B(c, A, B):
+     C = 180 - A - B
+     a = (math.sin(math.radians(A)) * c)/math.sin(math.radians(C))
+     b = (math.sin(math.radians(B)) * a)/math.sin(math.radians(A)) 
      print("a: ", a)
      print("b: ", b)
      print("c: ", c)
      print("A: ", A)
      print("B: ", B)
      print("C: ", C)
+     main()
 
 def calculate_c_A_C(c, A, C):
+     B = 180 - A - C
+     a = (math.sin(math.radians(A)) * c)/math.sin(math.radians(C))
+     b = (math.sin(math.radians(B)) * a)/math.sin(math.radians(A)) 
      print("a: ", a)
      print("b: ", b)
      print("c: ", c)
      print("A: ", A)
      print("B: ", B)
      print("C: ", C)
+     main()
 
 def calculate_c_B_C(c, B, C):
+     A = 180 - B - C
+     a = (math.sin(math.radians(A)) * c)/math.sin(math.radians(C))
+     b = (math.sin(math.radians(B)) * a)/math.sin(math.radians(A)) 
      print("a: ", a)
      print("b: ", b)
      print("c: ", c)
      print("A: ", A)
      print("B: ", B)
      print("C: ", C)
+     main()
 
 def calculate_A_B_C(A, B, C):
-     print("a: ", a)
-     print("b: ", b)
-     print("c: ", c)
-     print("A: ", A)
-     print("B: ", B)
-     print("C: ", C)
+     print("Kan ikke uderegne siderne")
 
 if __name__ == "__main__":
     main()
